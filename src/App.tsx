@@ -11,12 +11,9 @@ import './App.css'
 type Page = 'home' | 'sandbox' | 'ecommerce' | 'docs';
 
 function App() {
-  const { initGTM, pushEvent } = useGTM();
+  const { pushEvent } = useGTM();
   const [currentPage, setCurrentPage] = useState<Page>('home');
 
-  useEffect(() => {
-    initGTM('GTM-DEMO');
-  }, []);
 
   useEffect(() => {
     pushEvent({
